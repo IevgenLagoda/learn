@@ -40,3 +40,6 @@ book.printIsdn();
 const jsBook = new ITBook("JS book", "JS author", "1-32323-333", "JS");
 jsBook.printIsdn();
 jsBook.printTechnology();
+
+jsBook.fullTitle = 'JS Book by Author of JS';
+console.log(jsBook);
