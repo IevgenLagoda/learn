@@ -1,2 +1,2 @@
 var myName = 'Test';
-myName = 10;
+var myNum = 10;

@@ -1,2 +1,2 @@
-let myName = 'Test';
-myName = 10;
+let myName :string = 'Test';
+let myNum: number = 10;
