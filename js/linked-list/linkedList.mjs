@@ -55,7 +55,7 @@ export default class LinkedList {
   }
 
   remove(element) {
-
+    this.removeAt(this.indexOf(element));
   }
 
   indexOf(element) {
@@ -93,8 +93,21 @@ export default class LinkedList {
     return this.count;
   }
 
-  toString() {
+  getHead() {
+    return this.head;
+  }
 
+  toString() {
+    if (!this.head) {
+      return '';
+    }
+    let objString = `${this.head.element}`;
+    let current = this.head.next;
+    for(let i = 0; i < this.size() && current != null; i++) {
+      objString = `${objString}, ${current.element}`;
+      current = current.next;
+    }
+    return objString;
   }
 }
 
@@ -105,5 +118,6 @@ ll.push(15);
 ll.removeAt(0);
 ll.push(20);
 ll.insert(25, 0);
-console.log(ll);
-console.log(ll.indexOf(20));
+//ll.remove(25);
+console.log(ll.toString());
+
