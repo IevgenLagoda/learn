@@ -164,8 +164,7 @@ class BinarySearchTree {
 
 class AVLTree extends BinarySearchTree {
   constructor(compareFn = defaultCompare) {
-    this.compareFn = compareFn;
-    this.root = null;
+    super(compareFn);
   }
 
   getNodeHeight(node) {
@@ -222,7 +221,7 @@ class AVLTree extends BinarySearchTree {
   }
 
   insertNode(node, key) {
-    if (node === null) {
+    if (node == null) {
       return new Node(key);
     } else if (this.compareFn(key, node.key) === Compare.LESS_THEN) {
       node.left = this.insertNode(node.left, key);
@@ -250,7 +249,7 @@ class AVLTree extends BinarySearchTree {
   }
 
   removeNode(node, key) {
-    node = super(removeNode(node, key));
+    node = super.removeNode(node, key);
     if (node == null) {
       return node;
     }
@@ -282,3 +281,8 @@ const printNode = (value) => console.log(value);
 const keys = [11, 7, 15, 5, 9, 13, 20, 3, 6, 8, 10, 12, 14, 18, 25];
 
 const tree = new AVLTree();
+for(const key of keys) {
+  tree.inseert(key);
+}
+
+tree.inOrderTraverse(printNode);
