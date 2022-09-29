@@ -1,6 +1,6 @@
 function factorial(num) {
   let res = 1;
-  for(let i = num; i > 1; i--) {
+  for (let i = num; i > 1; i--) {
     res *= i;
   }
   return res;
@@ -14,4 +14,4 @@ function factorial_r(num) {
 }
 
 console.log(factorial(5));
-console.log(factorial_r(5));
+console.log(factorial_r(8));
