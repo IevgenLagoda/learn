@@ -4,7 +4,6 @@ class Animal {
 
   Animal({required this.name, bool sleepState = false}) {  
     _sleepState = sleepState;
-    print("I'm an anuimal with name $name");
   }
 
   Animal.withNoName() : this(name: 'Unknown');
@@ -25,6 +24,8 @@ class Animal {
     }
   }
 
-
+  String getName() {
+    return 'Animal $name';
+  }
 }
   

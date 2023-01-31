@@ -1,4 +1,4 @@
-import 'package:oop/oop.dart';
+import 'package:oop/animal.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -6,7 +6,7 @@ void main() {
     Animal cat = Animal(name: "Moon");
     expect(cat.runtimeType, Animal);
     expect(cat.isSleep(), false);
-    expect(cat.name, "Moon");
+    expect(cat.getName(), "Animal Moon");
 
     cat.sleep();
     expect(cat.isSleep(), true);
@@ -18,6 +18,6 @@ void main() {
   test('Animal with not name', () {
     Animal dog = Animal.withNoName();
     expect(dog.isSleep(), false);
-    expect(dog.name, "Unknown");
+    expect(dog.getName(), "Animal Unknown");
   });
 }
