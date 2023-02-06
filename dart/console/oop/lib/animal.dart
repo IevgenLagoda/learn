@@ -1,6 +1,8 @@
-class Animal {
+import 'package:oop/alive.dart';
+
+class Animal implements Alive{
   late final String name;
-  bool _sleepState = false;
+  late bool _sleepState = false;
 
   Animal({required this.name, bool sleepState = false}) {  
     _sleepState = sleepState;
@@ -8,6 +10,12 @@ class Animal {
 
   Animal.withNoName() : this(name: 'Unknown');
 
+  @override
+  String callMeAs() {
+    return 'Animal';
+  }
+
+  @override
   bool isSleep() {
     return _sleepState;
   }

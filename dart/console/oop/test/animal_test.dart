@@ -1,3 +1,5 @@
+import 'dart:mirrors';
+
 import 'package:oop/animal.dart';
 import 'package:test/test.dart';
 
@@ -19,5 +21,10 @@ void main() {
     Animal dog = Animal.withNoName();
     expect(dog.isSleep(), false);
     expect(dog.getName(), "Animal Unknown");
+  });
+
+  test('can be called', () {
+    Animal animal = Animal.withNoName();
+    expect(animal.callMeAs(), 'Animal');
   });
 }

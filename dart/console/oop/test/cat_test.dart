@@ -27,4 +27,9 @@ void main() {
     cat.wakeUp();
     expect(cat.isSleep(), false);
   });
+
+  test('can be called', () {
+    Cat cat = Cat();
+    expect(cat.callMeAs(), 'Cat');
+  });
 }
