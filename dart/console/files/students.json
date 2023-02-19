@@ -1,0 +1,11 @@
+{
+ "name": "Peter",
+ "age": 12,
+ "single": true,
+ "description": [
+  "worker",
+  "Student",
+  "Learner",
+  "Stupid"
+ ]
+}

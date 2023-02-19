@@ -1,0 +1,14 @@
+{
+ "string": "String",
+ "int": 444,
+ "bool": true,
+ "list": [
+  1,
+  2,
+  3
+ ],
+ "object": {
+  "property-1": "value-1",
+  "property-2": "value-2"
+ }
+}
