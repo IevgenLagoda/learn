@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    {% if not posts %}
+    <h2>No posts so far...</h2>    
+    {% endif %}
+    {% for post in posts %}
+    <div>
+        <h2>{{post.getTitle()}}</h2>
+        <h4>{{post.getDate()}}</h4>
+        <p>{{post.getBody()}}</p>
+    </div>
+    {% endfor %}
+    <h1>Add new post</h1>
+    <form action="/post" method="POST">
+        <label>
+            Title: <input type="text" name="title" />
+        </label>
+        <label>
+            Title: <input type="date" name="date" />
+        </label>
+        <label>
+            Body: <input type="text" name="body" />
+        </label>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

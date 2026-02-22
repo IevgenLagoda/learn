@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <title>Blog - Home</title>
+</head>
+<body>
+    <h1>By date</h1>
+    {{calendar|safe}}
+    <h1>New posts</h1>
+    {% for post in posts %}
+    <div>
+        <h2>{{post.getTitle()}}</h2>
+        <h4>{{post.getDate()}}</h4>
+        <p>{{post.getBody()}}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    p {
+       backface-visibility: hidden; 
+       position: absolute;
+       transform-style: preserve-3d;
+    }
+    div {
+        background: lightcoral;
+        border: 2px solid yellow;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        height: 40px;
+        width: 220px;
+
+        transition: all 1.5s;
+    }
+
+    #block:hover {
+        background: darkmagenta;
+        color: lemonchiffon;
+        border: 2px dashed greenyellow;
+    }
+
+    #block-2:hover {
+        transform: scale(1.4);
+        transform: translate(20px, -20px);
+        transform: rotate(30deg);
+        transform: skew(45deg, 10deg);
+    }
+
+    #block-3:hover {
+        transform: rotateX(180deg) translate3d(0, 0, -120px);
+    }
+</style>
+<body>
+    <div id="block">
+        I'm a block
+    </div>
+
+    <div id="block-2">
+        I'm a block 2
+    </div>
+
+    <p>
+    <div id="block-3">
+        I'm a block 3
+    </div>
+    </p>
+
+</body>
+</html>

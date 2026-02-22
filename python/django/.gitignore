@@ -1,0 +1,10 @@
+.vscode/
+.venv/
+.env
+db.sqlite3
+__pycache__/
+django_project/__pycache__/
+pages/__pycache__/
+posts/__pycache__/
+articles/__pycache__/
+accounts/__pycache__/

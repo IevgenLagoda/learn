@@ -1,0 +1,42 @@
+#container {
+    background: lightcoral;
+
+    align-items: center;
+    justify-content: center;
+    display: inline-grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 'logo header header' 'side body body' 'side footer footer';
+}
+
+.item {
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    background: lightgoldenrodyellow;
+    font-size: 2rem;
+
+    outline: 3px lightgreen;
+}
+
+.item1 {
+    grid-area: logo;
+}
+
+.item2 {
+    grid-area: header;
+}
+
+.item3 {
+    grid-area: side;
+}
+
+.item4 {
+    grid-area: body;
+}
+
+.item5 {
+    grid-area: footer;
+}
