@@ -1,11 +1,14 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Greating from './components/Greating';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Greating name="Developer" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
