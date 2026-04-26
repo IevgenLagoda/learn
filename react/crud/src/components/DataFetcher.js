@@ -1,4 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+DataFetcher.propTypes = {
+  url: PropTypes.string,
+};
+
+DataFetcher.defaultProps = {
+    url: null,
+};
 
 function DataFetcher({url}) {
     const [isLoading, setIsLoading] = React.useState(false);
