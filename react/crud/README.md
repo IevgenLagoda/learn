@@ -4,7 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, first install dependencies with:
+
+### `npm install`
+
+If you see an error like `'react-scripts' is not recognized as an internal or external command`, run `npm install` again or install it directly with:
+
+### `npm install react-scripts --save-dev`
+
+Then start the app in development mode with:
 
 ### `npm start`
 
