@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^0.0.0",
     "save-dev": "^0.0.1-security",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +39,9 @@
   },
   "devDependencies": {
     "eslint": "^8.57.1"
+  },
+  "allowScripts": {
+    "core-js-pure@3.49.0": true,
+    "core-js@3.49.0": true
   }
 }
