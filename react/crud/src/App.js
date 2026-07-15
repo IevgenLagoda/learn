@@ -9,15 +9,10 @@ function App() {
   const roles = ["user", "dev", "admin"];
 
   const [isLogged, setIsLogged] = React.useState(false);
-  const [url, setUrl] = React.useState(null);
+  const url = "https://jsonplaceholder.typicode.com/todos";
 
-  function onClick() {
+  function onClick(id) {
     setIsLogged(!isLogged);
-    if (isLogged) {
-      setUrl("https://jsonplaceholder.typicode.com/todos/1");
-    } else {
-      setUrl(null);
-    }
   }
 
   function onLoginStatusChange(isLogged) {

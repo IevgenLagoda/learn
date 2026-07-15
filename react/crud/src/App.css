@@ -1,3 +1,7 @@
+li {
+  list-style-type: none;
+}
+
 .App {
   text-align: center;
 }
@@ -19,5 +23,11 @@
 
 .error {
   color: red;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 

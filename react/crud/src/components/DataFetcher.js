@@ -9,36 +9,60 @@ DataFetcher.defaultProps = {
     url: null,
 };
 
+// Get data from the given url and display it in a list of Task[].
+function TaskList({tasks}) {
+    const taskItems = tasks.map((task, index) => {
+        const key = task.id != null ? task.id : `task-${index}`;
+        return (
+            <li key={key}>
+                <input type="checkbox" checked={task.completed} readOnly />
+                {task.title}
+            </li>
+        );
+    });
+    return (
+        <ul className="taskList">{taskItems}</ul>
+    );
+}
+
 function DataFetcher({url}) {
     const [isLoading, setIsLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
     const [data, setData] = React.useState(null);
 
     React.useEffect(() => {
-        console.log(url);
-        url && setIsLoading(true);
-        url && fetch(url)
-            .then(response => {
-                const resp = response.json();
-                return resp
-            })
+        if (!url) {
+            setData(null);
+            setError(null);
+            setIsLoading(false);
+            return;
+        }
+
+        setIsLoading(true);
+
+        fetch(url)
+            .then(response => response.json())
             .then(data => {
-                setIsLoading(false);
                 setError(null);
-                setData(data);                
+                const list = Array.isArray(data) ? data.slice(0, 10) : [data];
+                setData(list);
             })
             .catch(error => {
-                setIsLoading(false);
                 setError(error);
                 setData(null);
+            })
+            .then(() => {
+                setIsLoading(false);
             });
     }, [url]);
 
-    <div>Url: '{url}'</div>
-    if (isLoading) return <div>Loading...</div>
-    if (error) return <div>Error! {error.message}</div>
-    if (data) return <div>{JSON.stringify(data)}</div>
-    
+    return (
+        <>
+            {isLoading && <div>Loading...</div>}
+            {error && <div>Error! {error.message}</div>}
+            {data && <TaskList tasks={Array.isArray(data) ? data : [data]} />}
+        </>
+    );
 }
 
 export default DataFetcher;
